@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testing Workflows
-      - run: echo "It Works"
+        run: echo "It Works"
       
