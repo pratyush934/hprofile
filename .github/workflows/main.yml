@@ -45,9 +45,10 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Build and SonarQube Scan
+      - name: Build and SonarCloud Scan
         run: |
           mvn clean verify sonar:sonar \
             -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} \
-            -Dsonar.host.url=${{ secrets.SONAR_URL }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }} 
